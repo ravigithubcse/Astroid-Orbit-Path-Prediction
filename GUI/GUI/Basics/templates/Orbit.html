@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Prediction</title>
+        <style>
+        body{
+                background-image: url("{% static 'AstroidPrediction\image3.jpg'%}");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .input-form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  width: 100px;
+  display: solid red;
+  text-align: right;
+}
+
+.right-aligned {
+  text-align: right;
+  color: chartreuse;
+  
+}
+
+.left-aligned {
+  text-align: left;
+  color: coral;
+}
+
+.center-aligned {
+  text-align: center;
+  color: blueviolet;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid brown;
+  border-radius: 4px;
+}
+.container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100hv;
+                flex-direction: column;
+                
+            }
+            .input-group {
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .input-group label {
+                width: 150px;
+                margin-right: 10px;
+                text-align: right;
+            }
+            .input-group input {
+                width: 200px;
+            }
+            body {
+                font-family:Arial, sans-serif;
+                margin: 0;
+                padding:20px;
+            }
+            h1 {
+                color:red;
+                text-align: center;
+            }
+            .container{
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 20px;
+            }
+            .box{
+                padding: 20px;
+                border-radius: 5px;
+                
+            }
+            .left-column, .right-column {
+                background-color: left;
+                text-align: left;
+                margin-left: 1%;
+                margin-right: 2%;
+                border-radius: .35rem;
+                height: 500px;
+            }
+            .button{
+                color: blueviolet;  
+            }
+            </style>
+    </head>
+    <body>
+        <div align = 'center'>
+            <h1> ASTROID ORBIT PATH PREDICTION </h1> 
+        </div>
+    </body>
+</html>
+{% block content %}
+<form method="POST">
+        {% csrf_token %}
+        <div class="container">
+        <table>
+            <tr>
+                <td>NEO_flag:</td>
+                <td><input type="text" name="textNEO_flag"></td>
+                
+
+                <td>One_km_NEO_flag:</td>
+                <td><input type="text" name="textOne_km_NEO_flag"></td>
+                
+            </tr>
+            <tr> 
+                <td>PHA_flag:</td>
+                <td><input type="text" name="textPHA_flag"></td>
+            
+            
+                <td>H:</td>
+                <td><input type="text" name="textH"></td>
+            </tr>
+            <tr>
+                <td>G:</td>
+                <td><input type="text" name="textG"></td>
+        
+            
+                <td>Num_obs:</td>
+                <td><input type="text" name="textNum_obs"></td>
+            </tr>
+            <tr>
+                <td>rms:</td>
+                <td><input type="text" name="textrms"></td>
+
+                <td>U</td>
+                <td><input type="text" name="textU"></td>
+            </tr>
+            <tr>
+                <td>Epoch:</td>
+                <td><input type="text" name="textEpoch"></td>
+            
+            
+                <td>M:</td>
+                <td><input type="text" name="textM"></td>
+            </tr>
+            <tr>
+                <td>Peri:</td>
+                <td><input type="text" name="textPeri"></td>
+            
+            
+                <td>Node:</td>
+                <td><input type="text" name="textNode"></td>
+            </tr>
+            <tr>
+        
+                <td>i:</td>
+                <td><input type="text" name="texti"></td>
+            
+                <td>e:</td>
+                <td><input type="text" name="texte"></td>
+            </tr>
+            <tr>
+
+                <td>n:</td>
+                <td><input type="text" name="textn"></td>
+        
+                <td>a:</td>
+                <td><input type="text" name="texta"></td>
+            </tr>
+            <tr>
+                <td>Num_opps:</td>
+                <td><input type="text" name="textNum_opps"></td>
+        
+                <td>Tp:</td>
+                <td><input type="text" name="textTp"></td>
+            </tr>
+            <tr>
+                <td>Orbital_period:</td>
+                <td><input type="text" name="textOrbital_period"></td>
+            
+                <td>Perihelion_dist:</td>
+                <td><input type="text" name="textPerihelion_dist"></td>
+            </tr>
+            <tr>
+                <td>Aphelion_dist:</td>
+                <td><input type="text" name="textAphelion_dist"></td>
+            
+                <td>Semilatus_rectum:</td>
+                <td><input type="text" name="textSemilatus_rectum"></td>
+            </tr>
+            <tr>
+                <td>Synodic_period:</td>
+                <td><input type="text" name="textSynodic_period"></td>
+            
+                <td><button type="submit" class="btn btn-primary" name="buttonsubmit">predict</button></td>
+            </tr>
+            <tr>
+                <td>Result:{{result}}</td>
+            </tr>
+        </table>
+    </form>
+    {% endblock %}
