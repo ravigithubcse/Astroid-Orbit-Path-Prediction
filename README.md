@@ -1,19 +1,43 @@
-# Astroid-Orbit-Path-Prediction
-Machine Learning Project 
-#To run this Project Follow the below steps
-you can download the Anaconda Software
-you can download the VisualStudio Code Software
-download the file and give a filename as GUI open this folder in VisualStudio Code
-To open anaconda prompt open as run as Administrator 
-#To use this below command to run this Project
-cd "give here your filename path"
-django-admin startproject GUI
-cd GUI
-python manage.py startapp Basics
-python manage.py runserver
-#After you will get HTTP response and copy http code and paste it in the web browser
-you will get ooutput
+# 🚀 Asteroid Orbit Path Prediction
 
+A Machine Learning-based web application that predicts asteroid orbit paths.  
+Built with **Django** and served through a simple GUI interface.
 
-#if you have any Doubts regarding this process please comment me 
-#Thank you
+---
+
+## 📋 Features
+
+- Predicts asteroid orbit trajectories using ML models
+- Simple and interactive web-based GUI
+- Easy-to-run Django server setup
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend:** Django
+- **Frontend:** HTML/CSS (embedded in Django templates)
+- **Language:** Python
+- **Tools:** Anaconda, Visual Studio Code
+
+---
+
+## ⚙️ Prerequisites
+
+Before running the project, make sure you have:
+
+- [Anaconda](https://www.anaconda.com/download) installed
+- [Visual Studio Code](https://code.visualstudio.com/) installed
+- Python 3.x
+
+---
+
+## 🚀 Installation & Setup
+
+Follow these steps to run the project locally:
+
+### Step 1: Download the Project
+Clone or download this repository and save it in a folder named `GUI`.
+
+```bash
+git clone https://github.com/ravigithubcse/Astroid-Orbit-Path-Prediction.git
